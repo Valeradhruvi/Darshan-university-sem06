@@ -1,0 +1,6 @@
+Paragraphs Are The Building Blocks Of Papers. Many Students Define Paragraphs In Terms Of Length: A Paragraph Is A Group Of At Least Five Sentences, A Paragraph Is Half A Page Long, Etc. In Reality, Though, The Unity And Coherence Of Ideas Among Sentences Is What Constitutes A Paragraph. A Paragraph Is Defined As �a Group Of Sentences Or A Single Sentence That Forms A Unit” (Lunsford And Connors 116). Length And Appearance Do Not Determine Whether A Section In A Paper Is A Paragraph. For Instance, In Some Styles Of Writing, Particularly Journalistic Styles, A Paragraph Can Be Just One Sentence Long. Ultimately, A Paragraph Is A Sentence Or Group Of Sentences That Support One Main Idea. In This Handout, We Will Refer To This As The �controlling Idea,” Because It Controls What Happens In The Rest Of The Paragraph.In This Handout, We Will Refer To This As The �controlling Idea,” Because It Controls What Happens In The Rest Of The Paragraph. 
+
+
+ungetc(),
+rewind(),
+fseek()Inthishandout,wewillrefertothisasthe“controllingidea,”becauseitcontrolswhathappensintherestoftheparagraph.
