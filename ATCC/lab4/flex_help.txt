@@ -1,0 +1,7 @@
+save file with .l extention only
+
+to run flex file
+
+1. flex filename.l enter
+2. gcc lex.yy.c enter
+3. a.exe
