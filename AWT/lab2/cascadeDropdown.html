@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cascade Dropdown</title>
+  </head>
+  <body>
+    <h2>Cascade Dropdown:</h2>
+
+    <label>Country:</label>
+    <select id="country" onchange="loadStates()">
+      <option value="">-- Select Country --</option>
+      <option value="india">India</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <br /><br />
+
+    <label>State:</label>
+    <select id="state">
+      <option value="">-- Select State --</option>
+    </select>
+
+    <script>
+      const stateData = {
+        india: ["Gujarat", "Maharashtra", "Rajasthan"],
+        usa: ["California", "Texas", "Florida"],
+      };
+
+      function loadStates() {
+        const country = document.getElementById("country").value;
+        const stateDropdown = document.getElementById("state");
+
+        stateDropdown.innerHTML =
+          '<option value="">-- Select State --</option>';
+
+        if (country === "") return; // If no country selected
+
+        // Get the states of selected country
+        const states = stateData[country];
+
+        states.forEach((state) => {
+          let option = document.createElement("option");
+          option.value = state.toLowerCase();
+          option.textContent = state;
+          stateDropdown.appendChild(option);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="padding: 20px; display:flex;">
+
+    <div style="width: 320px;">
+
+        <div style="margin-bottom: 10px;">
+            <input id="inputText" type="text"
+                style="padding: 6px; width: 180px; border: 1px solid #ccc; border-radius: 4px;" />
+
+            <button onclick="onClick()" id="addEdit"
+                style="padding: 6px 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                Add
+            </button>
+        </div>
+
+        <div style="display:flex; font-weight:bold; padding:6px; background:#ddd; border-radius:4px;">
+            <div style="flex:1;">Item</div>
+            <div style="width:50px;">Edit</div>
+            <div style="width:60px;">Delete</div>
+        </div>
+
+        <div id="list"></div>
+
+    </div>
+
+    <script>
+
+        let items = [];
+        let list = document.getElementById('list');
+        let inputText = document.getElementById('inputText');
+        let btn = document.getElementById('addEdit');
+        let editIndex = -1;
+
+        function onClick() {
+            let newItem = inputText.value;
+
+            if (editIndex === -1) {
+                items.push(newItem);
+            } else {
+                items[editIndex] = newItem;
+                editIndex = -1;
+                btn.textContent = "Add";
+            }
+
+            inputText.value = '';
+            renderList();
+        }
+
+        function renderList() {
+            list.innerHTML = '';
+            items.forEach((item, index) => {
+
+                const row = document.createElement('div');
+                row.style = "display:flex; background:white; padding:6px; margin-top:4px; border-radius:4px; align-items:center;";
+
+                const colItem = document.createElement('div');
+                colItem.textContent = item;
+                colItem.style = "flex:1;";
+
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Edit';
+                editButton.style = "padding:4px 6px; background:#ffc107; border:none; border-radius:4px; cursor:pointer;";
+                editButton.addEventListener('click', () => {
+                    btn.textContent = "Edit";
+                    inputText.value = items[index];
+                    editIndex = index;
+                });
+
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.style = "padding:4px 6px; background:#dc3545; color:white; border:none; border-radius:4px; cursor:pointer;";
+                deleteButton.addEventListener('click', () => {
+                    items.splice(index, 1);
+                    renderList();
+                });
+
+                const colEdit = document.createElement('div');
+                colEdit.style = "width:50px;";
+                colEdit.appendChild(editButton);
+
+                const colDelete = document.createElement('div');
+                colDelete.style = "width:60px;";
+                colDelete.appendChild(deleteButton);
+
+                row.appendChild(colItem);
+                row.appendChild(colEdit);
+                row.appendChild(colDelete);
+
+                list.appendChild(row);
+            });
+        }
+
+    </script>
+</body>
+
+</html>

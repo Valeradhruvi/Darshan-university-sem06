@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input" />
+    <script>
+        document.getElementById('input').addEventListener('keydown',(e)=>{
+            if(e.key=='a'||e.key=='e'||e.key=='o'||e.key=='i'||e.key=='u'){
+                console.log( "Vowel is "+event.key);
+            }
+            else{
+                console.log( "key is "+event.key);
+            }
+        })
+        document.getElementById('input').addEventListener('keydown',()=>{document.body.style.backgroundColor="blue"})
+        document.getElementById('input').addEventListener('keyup',()=>{document.body.style.backgroundColor="red"})
+    </script>
+</body>
+</html>

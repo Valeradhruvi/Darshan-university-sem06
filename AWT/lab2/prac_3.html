@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputButton" rows="10" cols="30"></input>
+
+    <script>
+        const inputB = document.getElementById('inputButton');
+        inputB.addEventListener('keydown' , (event)=>{
+            console.log(`Key "${event.key}" pressed` );
+        })
+
+        inputB.addEventListener('keypress' , (event)=>{
+            console.log(`Key "${event.key}" pressed and released` );
+        })
+    </script>
+</body>
+</html>

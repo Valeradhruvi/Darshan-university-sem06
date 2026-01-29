@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Event</title>
+  </head>
+  <body>
+    <div>
+      <h3>Mouse Event Example</h3>
+      <button onmousedown="indentifyEvent(event)">Click Here</button>
+      <p id="click"></p>
+    </div>
+
+    <script>
+      function indentifyEvent(e) {
+        if (e.button == 0) {
+          document.getElementById("click").innerHTML = "Left button Clicked";
+        } else if (e.button == 1) {
+          document.getElementById("click").innerHTML =
+            "Middle scrollbar Clicked";
+        } else {
+          document.getElementById("click").innerHTML = "Right button Clicked";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Event</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="textInput" placeholder="Type something">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="divElement">
+
+    </div>
+
+    <script>
+        const formElement = document.getElementById('myForm');
+        const textInputElement = document.getElementById('textInput');
+        const divElement = document.getElementById('divElement');
+
+
+        formElement.addEventListener('blur', ()=>{
+           divElement.textContent = "Form Focus got blured";
+        }, true);
+
+        formElement.addEventListener('focus', ()=>{
+            divElement.textContent = "Form Gained Focus";
+        }, true);
+
+        formElement.addEventListener('submit', ()=>{
+            divElement.textContent = "Form Submitted";
+        } , true);
+
+    </script>
+</body>
+</html>

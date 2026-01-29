@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event</title>
+</head>
+<body>
+    <div>
+        <button id="myButton">Click here</button>
+        
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        const buttonElement = document.getElementById('myButton');
+        buttonElement.addEventListener('mouseover' , ()=>{
+            console.log("Mouse Over Event Triggered");
+        })
+
+        buttonElement.addEventListener('mouseout' , ()=>{
+            console.log("Mouse Out Event Triggered");
+        })
+
+       buttonElement.addEventListener('click' , ()=>{
+           console.log("Mouse Click Event Triggered");
+       })
+
+       buttonElement.addEventListener('rightclick' , ()=>{
+           console.log("Mouse Right Click Event Triggered");
+       })
+
+       buttonElement.addEventListener('leftclick' , ()=>{
+            console.log("Mouse Left Click Event Triggered");
+       })   
+    </script>
+</body>
+</html>
